@@ -311,6 +311,7 @@ define(function () {
                     _this.$el(id).style.display = 'none';
                 });
             },
+            
             // 左右箭头事件监控
             arrowEventListener: function (_this, id, $outputId) {
                 var targetDate = _this.format(_this.date),
