@@ -11,14 +11,14 @@ define(function () {
                 this.outputId[i] = c_data.outputId[i]
             }
             if (this.id.length > 1) {
-                this.isAddCalendarByOne = true;       // 是否增加一个耦合日历（双日历）
+                this.isAddCalendarByOne = true;        // 是否增加一个耦合日历（双日历）
             }
             this.targetId = this.id[1];                // 在这个id元素内添加第2个日历（耦合日历）
             this.id = this.id[0];                      // 在这个id元素内添加1个日历
-            this.targetOutputId = this.outputId[1];  // 点击该id元素时会展示出对应的耦合日历（第2个日历,须先生成第1个日历）及输出用户选择的日期值也在该元素上显示
-            this.outputId = this.outputId[0];         // 点击该id元素时会展示出对应的日历，及输出用户选择的日期值也在该元素上显示
+            this.targetOutputId = this.outputId[1];    // 点击该id元素时会展示出对应的耦合日历（第2个日历,须先生成第1个日历）及输出用户选择的日期值也在该元素上显示
+            this.outputId = this.outputId[0];          // 点击该id元素时会展示出对应的日历，及输出用户选择的日期值也在该元素上显示
         }
-        this.date = c_data.targetDate;                // 根据这个日期值来生成对应的日历
+        this.date = c_data.targetDate;                 // 根据这个日期值来生成对应的日历
     }
 
 
@@ -124,7 +124,7 @@ define(function () {
         addDom: function (Data, $outputId, id, one) {
             if (one) this.$el(id).innerHTML = this.html;                                     // 添加静态dom
             this.html = '';
-            this.$el(id, 'date')[0].innerHTML = Data.year + '年' + (Data.month + 1) + '月'; // 获取头部年月
+            this.$el(id, 'date')[0].innerHTML = Data.year + '年' + (Data.month + 1) + '月';  // 获取头部年月
             var $day = this.$el(id, 'days')[0];
             this.getPreMonthDays($day, Data, id);
             this.getCurMonthDays($day, Data);
